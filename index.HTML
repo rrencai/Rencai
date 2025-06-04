@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Секретный код</title>
+  <style>
+    body {
+      background-color: #fefefe;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    #cat {
+      margin-top: 40px;
+      display: none;
+    }
+
+    #cat img {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Введи секретный код</h1>
+  <input type="text" id="codeInput" placeholder="Например: 1234">
+  <button onclick="checkCode()">ОК</button>
+
+  <div id="cat">
+    <h2>Вот и котик!</h2>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Танцующий кот">
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      const cat = document.getElementById("cat");
+
+      if (input === "1234") {
+        cat.style.display = "block";
+      } else {
+        cat.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
