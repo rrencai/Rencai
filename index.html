@@ -1,127 +1,31 @@
-from zipfile import ZipFile
-import os
-
-# Создание структуры проекта
-project_dir = "/mnt/data/kaspi_identity_mock"
-os.makedirs(project_dir, exist_ok=True)
-
-# HTML содержимое
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Удостоверение личности — Kaspi (UI-демо)</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaspi - Удостоверение личности</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>Kaspi.kz</h1>
-        </header>
-        <main>
-            <h2>Удостоверение личности</h2>
-            <form>
-                <label for="fullName">ФИО:</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Иванов Иван Иванович">
-
-                <label for="iin">ИИН:</label>
-                <input type="text" id="iin" name="iin" placeholder="Например, 990101123456">
-
-                <label for="dob">Дата рождения:</label>
-                <input type="date" id="dob" name="dob">
-
-                <label for="docNumber">Номер документа:</label>
-                <input type="text" id="docNumber" name="docNumber" placeholder="ID12345678">
-
-                <label for="photoUpload">Фото удостоверения:</label>
-                <input type="file" id="photoUpload" name="photoUpload">
-
-                <button type="submit">Подтвердить</button>
-            </form>
-        </main>
-        <footer>
-            <p>* Это UI-демо Kaspi. Не является настоящим приложением.</p>
-        </footer>
+  <div class="app">
+    <div class="header">
+      <span class="back">&larr;</span>
+      <h1>Удостоверение личности</h1>
     </div>
+
+    <div class="tabs">
+      <button class="active">Документ</button>
+      <button>Реквизиты</button>
+    </div>
+
+    <div class="document-card">
+      <img src="idcard.jpg" alt="Удостоверение личности" />
+    </div>
+
+    <div class="actions">
+      <button class="primary">📷 Предъявить документ</button>
+      <button class="secondary">📤 Отправить документ</button>
+    </div>
+  </div>
 </body>
 </html>
-"""
-
-# CSS содержимое
-css_content = """body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-}
-.app-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-header {
-    background-color: #d60000;
-    padding: 1rem;
-    color: white;
-    text-align: center;
-    border-radius: 6px 6px 0 0;
-}
-main {
-    background-color: white;
-    padding: 2rem;
-    border-radius0 0 6px 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-form label {
-    margin-top: 1rem;
-}
-form input[type="text"],
-form input[type="date"],
-form input[type="file"] {
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-button {
-    margin-top: 1.5rem;
-    padding: 0.75rem;
-    background-color: #d60000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #b50000;
-}
-footer {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #777;
-}
-"""
-
-# Сохраняем HTML и CSS
-html_path = os.path.join(project_dir, "index.html")
-css_path = os.path.join(project_dir, "styles.css")
-
-with open(html_path, "w") as f:
-    f.write(html_content)
-
-with open(css_path, "w") as f:
-    f.write(css_content)
-
-# Создаем архив
-zip_path = "/mnt/data/kaspi_identity_mock.zip"
-with ZipFile(zip_path, "w") as zipf:
-    zipf.write(html_path, arcname="kaspi_identity_mock/index.html")
-    zipf.write(css_path, arcname="kaspi_identity_mock/styles.css")
-
-zip_path
