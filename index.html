@@ -1,184 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>КиноСайт Абоки</title>
+  <meta charset="UTF-8">
+  <title>Секретный код</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0; 
-      padding: 0;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
-      line-height: 1.5;
-    }
-
-    header {
-      background-color: #1a1a1a;
-      padding: 20px;
+      background-color: #fefefe;
+      font-family: Arial, sans-serif;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      border-bottom: 2px solid #333;
+      margin-top: 100px;
     }
 
-    .banner {
-      width: 100%;
-      height: 300px;
-      background: url('https://via.placeholder.com/1200x300.png?text=Баннер+Фильма') center/cover no-repeat;
-      margin-bottom: 40px;
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      border-left: 4px solid crimson;
-      padding-left: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
       cursor: pointer;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(255, 0, 0, 0.6);
+    #cat {
+      margin-top: 40px;
+      display: none;
     }
 
-    .card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-body {
-      padding: 15px;
-    }
-
-    .card-body h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .card-body p {
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    .watch-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background-color: crimson;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.2s;
-    }
-
-    .watch-btn:hover {
-      background-color: darkred;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      background-color: #1a1a1a;
-      color: #888;
-      font-size: 14px;
-      border-top: 2px solid #333;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        font-size: 22px;
-      }
-      .banner {
-        height: 200px;
-      }
-      .card img {
-        height: 250px;
-      }
+    #cat img {
+      width: 300px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  🎬 КиноСайт Абоки
-</header>
+  <h1>Введи секретный код</h1>
+  <input type="text" id="codeInput" placeholder="Например: 1234">
+  <button onclick="checkCode()">ОК</button>
 
-<div class="banner"></div>
-
-<div class="container">
-  <h2>Популярные фильмы</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x400.png?text=Фильм+1" alt="Фильм 1" />
-      <div class="card-body">
-        <h3>Фильм 1</h3>
-        <p>Описание фильма номер один. Очень захватывающий сюжет!</p>
-        <a href="#" class="watch-btn">Смотреть</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x400.png?text=Фильм+2" alt="Фильм 2" />
-      <div class="card-body">
-        <h3>Фильм 2</h3>
-        <p>Вторая часть эпичного приключения в мире будущего.</p>
-        <a href="#" class="watch-btn">Смотреть</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x400.png?text=Фильм+3" alt="Фильм 3" />
-      <div class="card-body">
-        <h3>Фильм 3</h3>
-        <p>История любви, которая затронет сердце каждого зрителя.</p>
-        <a href="#" class="watch-btn">Смотреть</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x400.png?text=Фильм+4" alt="Фильм 4" />
-      <div class="card-body">
-        <h3>Фильм 4</h3>
-        <p>Захватывающий боевик с неожиданными поворотами.</p>
-        <a href="#" class="watch-btn">Смотреть</a>
-      </div>
-    </div>
-
+  <div id="cat">
+    <h2>Вот и котик!</h2>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Танцующий кот">
   </div>
-</div>
 
-<footer>
-2025.07.08-Все права защищены
-</footer>
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      const cat = document.getElementById("cat");
+
+      if (input === "1234") {
+        cat.style.display = "block";
+      } else {
+        cat.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
