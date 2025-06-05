@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f3f3f3;
+}
+
+.app {
+  width: 360px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.header .back {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: #e60000;
+  border-bottom: 2px solid #e60000;
+}
+
+.document-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+
+.actions {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.primary {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.secondary {
+  background-color: transparent;
+  color: #007aff;
+  border: 2px solid #007aff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
