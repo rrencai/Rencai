@@ -1,360 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaspi.kz - Удостоверение личности</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', Arial, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f8f8;
-            color: #333;
-            max-width: 430px;
-            margin: 0 auto;
-            position: relative;
-            min-height: 100vh;
-            background-color: #fff;
-        }
-        
-        .header {
-            background-color: #00a1e4;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            position: relative;
-            font-size: 18px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .time {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 14px;
-            color: white;
-        }
-        
-        .back-button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            color: white;
-        }
-        
-        .tabs {
-            display: flex;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 0 20px;
-            background-color: white;
-        }
-        
-        .tab {
-            padding: 15px 0;
-            margin-right: 25px;
-            position: relative;
-            font-weight: 500;
-            color: #777;
-            font-size: 15px;
-        }
-        
-        .tab.active {
-            color: #00a1e4;
-            font-weight: 500;
-        }
-        
-        .tab.active:after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #00a1e4;
-        }
-        
-        .content {
-            padding: 15px;
-            background-color: #f8f8f8;
-        }
-        
-        .id-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 0;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        
-        .id-card-header {
-            padding: 20px 15px;
-            border-bottom: 1px solid #f0f0f0;
-            color: #444;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-        
-        .id-card-content {
-            padding: 15px;
-        }
-        
-        .id-card-field {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-        
-        .field-label {
-            color: #777;
-            font-size: 14px;
-        }
-        
-        .field-value {
-            font-weight: 500;
-            font-size: 14px;
-            text-align: right;
-            color: #333;
-        }
-        
-        .id-card-footer {
-            padding: 15px;
-            border-top: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .action-button {
-            color: #00a1e4;
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        
-        .upload-section {
-            margin-top: 25px;
-            text-align: center;
-        }
-        
-        .upload-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 20px;
-            background-color: #00a1e4;
-            color: white;
-            border-radius: 8px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            cursor: pointer;
-            font-size: 15px;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0,161,228,0.2);
-        }
-        
-        .preview-container {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto 20px;
-            border: 1px dashed #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            display: none;
-            background-color: #fafafa;
-        }
-        
-        .preview-image {
-            max-width: 100%;
-            max-height: 200px;
-            display: block;
-            margin: 0 auto;
-            border-radius: 5px;
-        }
-        
-        .remove-btn {
-            display: block;
-            color: #ff4444;
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .footer-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            max-width: 430px;
-            display: flex;
-            justify-content: space-around;
-            background-color: white;
-            padding: 12px 0;
-            box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
-            border-top: 1px solid #eee;
-        }
-        
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #888;
-            font-size: 11px;
-        }
-        
-        .nav-item i {
-            font-size: 24px;
-            margin-bottom: 4px;
-            color: #666;
-        }
-        
-        .nav-item.active {
-            color: #00a1e4;
-        }
-        
-        .nav-item.active i {
-            color: #00a1e4;
-        }
-        
-        #fileInput {
-            display: none;
-        }
-        
-        .material-icons {
-            font-size: 20px;
-            margin-right: 8px;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Секретный код</title>
+  <style>
+    body {
+      background-color: #fefefe;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    #cat {
+      margin-top: 40px;
+      display: none;
+    }
+
+    #cat img {
+      width: 300px;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="time">7:02</div>
-        Удостоверение личности
-        <div class="back-button">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
-    
-    <div class="tabs">
-        <div class="tab active">Документ</div>
-        <div class="tab">Реквизиты</div>
-    </div>
-    
-    <div class="content">
-        <div class="id-card">
-            <div class="id-card-header">
-                КАЗАХСТАН РЕСПУБЛИКАСЫ ЖЕКЕ КУҰЛІК<br>
-                РЕСПУБЛИКА КАЗАХСТАН УДОСТОВЕРЕНИЕ ЛИЧНОСТИ
-            </div>
-            
-            <div class="id-card-content">
-                <div class="id-card-field">
-                    <div class="field-label">ФИО</div>
-                    <div class="field-value">Онгаров Алихан Бауыржанович</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">ИИН</div>
-                    <div class="field-value">070723551279</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">Дата рождения</div>
-                    <div class="field-value">23.07.2007</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">Номер документа</div>
-                    <div class="field-value">056082746</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">Дата выдачи</div>
-                    <div class="field-value">07.08.2023</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">Срок действия</div>
-                    <div class="field-value">06.08.2033</div>
-                </div>
-                
-                <div class="id-card-field">
-                    <div class="field-label">Выдан</div>
-                    <div class="field-value">МВД РК</div>
-                </div>
-            </div>
-            
-            <div class="id-card-footer">
-                <div class="action-button">Предъявить документ</div>
-                <div class="action-button">ТЫ</div>
-            </div>
-        </div>
-        
-        <div class="upload-section">
-            <label for="fileInput" class="upload-btn">
-                <i class="material-icons">add_a_photo</i>
-                Загрузить фото документа
-            </label>
-            <input type="file" id="fileInput" accept="image/*">
-            
-            <div class="preview-container" id="previewContainer">
-                <img src="" alt="Preview" class="preview-image" id="previewImage">
-                <span class="remove-btn" id="removeBtn">Удалить фото</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-nav">
-        <div class="nav-item">
-            <i class="material-icons">home</i>
-            Главная
-        </div>
-        <div class="nav-item">
-            <i class="material-icons">credit_card</i>
-            Платежи
-        </div>
-        <div class="nav-item">
-            <i class="material-icons">qr_code</i>
-            QR
-        </div>
-        <div class="nav-item active">
-            <i class="material-icons">person</i>
-            Профиль
-        </div>
-    </div>
 
-    <script>
-        const fileInput = document.getElementById('fileInput');
-        const previewContainer = document.getElementById('previewContainer');
-        const previewImage = document.getElementById('previewImage');
-        const removeBtn = document.getElementById('removeBtn');
-        
-        fileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                
-                reader.addEventListener('load', function() {
-                    previewImage.src = this.result;
-                    previewContainer.style.display = 'block';
-                });
-                
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        removeBtn.addEventListener('click', function() {
-            previewImage.src = '';
-            previewContainer.style.display = 'none';
-            fileInput.value = '';
-        });
-    </script>
+  <h1>Введи секретный код</h1>
+  <input type="text" id="codeInput" placeholder="Например: 1234">
+  <button onclick="checkCode()">ОК</button>
+
+  <div id="cat">
+    <h2>Вот и котик!</h2>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Танцующий кот">
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      const cat = document.getElementById("cat");
+
+      if (input === "1234") {
+        cat.style.display = "block";
+      } else {
+        cat.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
